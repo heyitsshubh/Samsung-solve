@@ -138,32 +138,32 @@ const Quiz = () => {
   const isCorrect = submitted && selectedOption === currentQuestionData.correctAnswer;
 
   return (
-    <div style={{ minHeight: '100vh', background: colorMap.gray50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '48px 16px' }}>
-      <div style={{ maxWidth: 768, width: '100%', background: colorMap.white, padding: 32, borderRadius: 16, boxShadow: '0 10px 32px 0 rgba(31,41,55,0.08)', display: 'flex', flexDirection: 'column', gap: 32 }}>
+    <div style={{ minHeight: '100vh', background: colorMap.gray50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 4px' }}>
+      <div style={{ maxWidth: 420, width: '100%', background: colorMap.white, padding: 16, borderRadius: 12, boxShadow: '0 6px 18px 0 rgba(31,41,55,0.08)', display: 'flex', flexDirection: 'column', gap: 18 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>
-            <h1 style={{ fontSize: 24, fontWeight: 700, color: colorMap.gray800 }}>Quiz: Basketball – Projectile Motion</h1>
-            <p style={{ color: colorMap.gray600, marginTop: 4 }}>Test your knowledge of physics in basketball</p>
+            <h1 style={{ fontSize: 18, fontWeight: 700, color: colorMap.gray800 }}>Quiz: Basketball – Projectile Motion</h1>
+            <p style={{ color: colorMap.gray600, marginTop: 2, fontSize: 12 }}>Test your knowledge of physics in basketball</p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <i className="fas fa-basketball-ball" style={{ color: colorMap.orange500, fontSize: 20 }}></i>
-            <i className="fas fa-atom" style={{ color: colorMap.blue500, fontSize: 20 }}></i>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <i className="fas fa-basketball-ball" style={{ color: colorMap.orange500, fontSize: 16 }}></i>
+            <i className="fas fa-atom" style={{ color: colorMap.blue500, fontSize: 16 }}></i>
           </div>
         </div>
         
-        <div style={{ marginTop: 24 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-            <span style={{ fontSize: 14, fontWeight: 500, color: colorMap.gray700 }}>Question {currentQuestion + 1} of {questions.length}</span>
-            <span style={{ fontSize: 14, fontWeight: 500, color: colorMap.gray700 }}>{Math.round(progress)}% Complete</span>
+        <div style={{ marginTop: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+            <span style={{ fontSize: 12, fontWeight: 500, color: colorMap.gray700 }}>Question {currentQuestion + 1} of {questions.length}</span>
+            <span style={{ fontSize: 12, fontWeight: 500, color: colorMap.gray700 }}>{Math.round(progress)}% Complete</span>
           </div>
-          <div style={{ width: '100%', background: colorMap.gray200, borderRadius: 9999, height: 10 }}>
-            <div style={{ background: colorMap.blue600, height: 10, borderRadius: 9999, width: `${progress}%`, transition: 'width 0.3s' }}></div>
+          <div style={{ width: '100%', background: colorMap.gray200, borderRadius: 9999, height: 6 }}>
+            <div style={{ background: colorMap.blue600, height: 6, borderRadius: 9999, width: `${progress}%`, transition: 'width 0.3s' }}></div>
           </div>
         </div>
 
-        <div style={{ background: colorMap.gray50, padding: 24, borderRadius: 12, border: `1px solid ${colorMap.gray200}`, marginTop: 24 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, color: colorMap.gray800, marginBottom: 16 }}>{currentQuestionData.question}</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 24 }}>
+        <div style={{ background: colorMap.gray50, padding: 12, borderRadius: 8, border: `1px solid ${colorMap.gray200}`, marginTop: 12 }}>
+          <h2 style={{ fontSize: 15, fontWeight: 600, color: colorMap.gray800, marginBottom: 8 }}>{currentQuestionData.question}</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 12 }}>
             {currentQuestionData.options.map((option, index) => {
               let bg = colorMap.white;
               let border = colorMap.gray200;
@@ -192,26 +192,26 @@ const Quiz = () => {
                 }
               }
               if (submitted && option === currentQuestionData.correctAnswer) {
-                icon = <i className="fas fa-check" style={{ color: colorMap.green500, marginLeft: 'auto' }}></i>;
+                icon = <i className="fas fa-check" style={{ color: colorMap.green500, marginLeft: 'auto', fontSize: 14 }}></i>;
               } else if (submitted && selectedOption === option && option !== currentQuestionData.correctAnswer) {
-                icon = <i className="fas fa-times" style={{ color: colorMap.red500, marginLeft: 'auto' }}></i>;
+                icon = <i className="fas fa-times" style={{ color: colorMap.red500, marginLeft: 'auto', fontSize: 14 }}></i>;
               }
               return (
                 <div
                   key={index}
                   onClick={() => handleOptionSelect(option)}
                   style={{
-                    display: 'flex', alignItems: 'center', padding: 16, borderRadius: 12, border: `1.5px solid ${border}`,
+                    display: 'flex', alignItems: 'center', padding: 8, borderRadius: 8, border: `1.5px solid ${border}`,
                     cursor: 'pointer', background: bg, transition: 'background 0.2s, border 0.2s',
-                    boxShadow: selectedOption === option ? '0 2px 8px 0 rgba(59,130,246,0.08)' : undefined
+                    boxShadow: selectedOption === option ? '0 1px 4px 0 rgba(59,130,246,0.08)' : undefined
                   }}
                 >
-                  <div style={{ width: 20, height: 20, borderRadius: '50%', border: `2px solid ${radioBorder}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 12 }}>
+                  <div style={{ width: 14, height: 14, borderRadius: '50%', border: `2px solid ${radioBorder}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: 8 }}>
                     {selectedOption === option && (
-                      <div style={{ width: 12, height: 12, borderRadius: '50%', background: radioBg }}></div>
+                      <div style={{ width: 8, height: 8, borderRadius: '50%', background: radioBg }}></div>
                     )}
                   </div>
-                  <span style={{ color: text }}>{option}</span>
+                  <span style={{ color: text, fontSize: 13 }}>{option}</span>
                   {icon}
                 </div>
               );
@@ -220,14 +220,14 @@ const Quiz = () => {
         </div>
 
         {showHint && (
-          <div style={{ background: colorMap.yellow50, border: `1px solid ${colorMap.yellow200}`, borderRadius: 12, padding: 16, marginTop: 16 }}>
+          <div style={{ background: colorMap.yellow50, border: `1px solid ${colorMap.yellow200}`, borderRadius: 8, padding: 10, marginTop: 8 }}>
             <div style={{ display: 'flex' }}>
               <div style={{ flexShrink: 0 }}>
-                <i className="fas fa-lightbulb" style={{ color: colorMap.yellow400, marginTop: 4 }}></i>
+                <i className="fas fa-lightbulb" style={{ color: colorMap.yellow400, marginTop: 2, fontSize: 14 }}></i>
               </div>
-              <div style={{ marginLeft: 12 }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: colorMap.yellow800 }}>Hint</h3>
-                <div style={{ marginTop: 8, fontSize: 14, color: colorMap.yellow700 }}>
+              <div style={{ marginLeft: 8 }}>
+                <h3 style={{ fontSize: 12, fontWeight: 600, color: colorMap.yellow800 }}>Hint</h3>
+                <div style={{ marginTop: 4, fontSize: 12, color: colorMap.yellow700 }}>
                   <p>{currentQuestionData.hint}</p>
                 </div>
               </div>
@@ -235,46 +235,46 @@ const Quiz = () => {
           </div>
         )}
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 32, alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 16, alignItems: 'center', justifyContent: 'space-between' }}>
           <button
             onClick={toggleHint}
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px', border: `1px solid ${colorMap.gray300}`, borderRadius: 8, boxShadow: '0 1px 2px 0 rgba(0,0,0,0.03)', fontSize: 14, fontWeight: 500, color: colorMap.gray700, background: colorMap.white, cursor: 'pointer', outline: 'none', transition: 'background 0.2s', marginBottom: 0 }}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6px 10px', border: `1px solid ${colorMap.gray300}`, borderRadius: 6, boxShadow: '0 1px 2px 0 rgba(0,0,0,0.03)', fontSize: 12, fontWeight: 500, color: colorMap.gray700, background: colorMap.white, cursor: 'pointer', outline: 'none', transition: 'background 0.2s', marginBottom: 0 }}
           >
-            <i className="fas fa-lightbulb" style={{ color: colorMap.yellow400, marginRight: 8 }}></i>
+            <i className="fas fa-lightbulb" style={{ color: colorMap.yellow400, marginRight: 6, fontSize: 13 }}></i>
             {showHint ? 'Hide Hint' : 'Use a Hint'}
           </button>
-          <div style={{ display: 'flex', gap: 16 }}>
+          <div style={{ display: 'flex', gap: 10 }}>
             {!submitted ? (
               <button
                 onClick={handleSubmit}
                 disabled={!selectedOption}
-                style={{ padding: '8px 24px', borderRadius: 8, boxShadow: '0 1px 2px 0 rgba(0,0,0,0.03)', fontSize: 14, fontWeight: 500, color: colorMap.white, background: selectedOption ? colorMap.blue600 : colorMap.blue300, cursor: selectedOption ? 'pointer' : 'not-allowed', outline: 'none', border: 'none', transition: 'background 0.2s' }}
+                style={{ padding: '6px 16px', borderRadius: 6, boxShadow: '0 1px 2px 0 rgba(0,0,0,0.03)', fontSize: 12, fontWeight: 500, color: colorMap.white, background: selectedOption ? colorMap.blue600 : colorMap.blue300, cursor: selectedOption ? 'pointer' : 'not-allowed', outline: 'none', border: 'none', transition: 'background 0.2s' }}
               >
                 Submit Answer
               </button>
             ) : (
               <button
                 onClick={handleNext}
-                style={{ padding: '8px 24px', background: colorMap.green600, borderRadius: 8, boxShadow: '0 1px 2px 0 rgba(0,0,0,0.03)', fontSize: 14, fontWeight: 500, color: colorMap.white, cursor: 'pointer', outline: 'none', border: 'none', transition: 'background 0.2s', display: 'flex', alignItems: 'center' }}
+                style={{ padding: '6px 16px', background: colorMap.green600, borderRadius: 6, boxShadow: '0 1px 2px 0 rgba(0,0,0,0.03)', fontSize: 12, fontWeight: 500, color: colorMap.white, cursor: 'pointer', outline: 'none', border: 'none', transition: 'background 0.2s', display: 'flex', alignItems: 'center' }}
               >
                 Next Question
-                <i className="fas fa-arrow-right" style={{ marginLeft: 8 }}></i>
+                <i className="fas fa-arrow-right" style={{ marginLeft: 6, fontSize: 13 }}></i>
               </button>
             )}
           </div>
         </div>
 
         {submitted && (
-          <div style={{ marginTop: 16, padding: 16, borderRadius: 12, background: isCorrect ? colorMap.green50 : colorMap.red50, border: `1px solid ${isCorrect ? colorMap.green200 : colorMap.red200}` }}>
+          <div style={{ marginTop: 8, padding: 10, borderRadius: 8, background: isCorrect ? colorMap.green50 : colorMap.red50, border: `1px solid ${isCorrect ? colorMap.green200 : colorMap.red200}` }}>
             <div style={{ display: 'flex' }}>
               <div style={{ flexShrink: 0 }}>
-                <i className={isCorrect ? 'fas fa-check-circle' : 'fas fa-exclamation-circle'} style={{ color: isCorrect ? colorMap.green500 : colorMap.red500, marginTop: 2 }}></i>
+                <i className={isCorrect ? 'fas fa-check-circle' : 'fas fa-exclamation-circle'} style={{ color: isCorrect ? colorMap.green500 : colorMap.red500, marginTop: 1, fontSize: 14 }}></i>
               </div>
-              <div style={{ marginLeft: 12 }}>
-                <h3 style={{ fontSize: 14, fontWeight: 600, color: isCorrect ? colorMap.green700 : colorMap.red500 }}>
+              <div style={{ marginLeft: 8 }}>
+                <h3 style={{ fontSize: 12, fontWeight: 600, color: isCorrect ? colorMap.green700 : colorMap.red500 }}>
                   {isCorrect ? 'Correct!' : 'Incorrect'}
                 </h3>
-                <div style={{ marginTop: 8, fontSize: 14, color: isCorrect ? colorMap.green700 : colorMap.red500 }}>
+                <div style={{ marginTop: 4, fontSize: 12, color: isCorrect ? colorMap.green700 : colorMap.red500 }}>
                   {isCorrect 
                     ? <p>Great job! You selected the right answer.</p>
                     : <p>The correct answer is: {currentQuestionData.correctAnswer}</p>

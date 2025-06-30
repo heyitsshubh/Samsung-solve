@@ -205,7 +205,7 @@ const BasketballMotion = () => {
               
               <div 
                 ref={chartRef} 
-                style={{ width: '100%', height: 500, background: 'linear-gradient(to bottom, #EFF6FF, #DBEAFE)', borderRadius: 12, overflow: 'hidden', position: 'relative', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                style={{ width: '100%', height: 400, background: 'linear-gradient(to bottom, #EFF6FF, #DBEAFE)', borderRadius: 12, overflow: 'hidden', position: 'relative', backgroundSize: 'cover', backgroundPosition: 'center' }}
               ></div>
               
               <div style={{ marginTop: 16, background: '#fff', padding: 16, borderRadius: 12, boxShadow: '0 1px 4px 0 rgba(0,0,0,0.04)' }}>

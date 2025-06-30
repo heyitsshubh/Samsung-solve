@@ -116,9 +116,8 @@ const Quiz = () => {
       setSubmitted(false);
       setShowHint(false);
     } else {
-      // Navigate to result page with score and total
       navigate('/result', { state: { score, total: questions.length } });
-    }
+    } 
   };
 
   const toggleHint = () => {
@@ -138,7 +137,7 @@ const Quiz = () => {
   const isCorrect = submitted && selectedOption === currentQuestionData.correctAnswer;
 
   return (
-    <div style={{ minHeight: '100vh', background: colorMap.gray50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 4px' }}>
+    <div style={{ minHeight: '100vh',width: '100%', background: colorMap.blue50, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px 4px'  }}>
       <div style={{ maxWidth: 420, width: '100%', background: colorMap.white, padding: 16, borderRadius: 12, boxShadow: '0 6px 18px 0 rgba(31,41,55,0.08)', display: 'flex', flexDirection: 'column', gap: 18 }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div>

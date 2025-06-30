@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={
           <div style={{height:'100vh', background:'#065F46', color:'#fff', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', fontSize: '1.875rem'}}>
-            Tailwind CSS is working!<br />
-            <Link to="/quiz" style={{marginTop:32, padding:'12px 24px', background:'#fff', color:'#065F46', borderRadius:12, fontSize:'1.25rem', fontWeight:700, textDecoration:'none', transition:'background 0.2s'}}>Go to Quiz</Link>
+            Home<br />
+            <Link to="/basketballmotion" style={{marginTop:32, padding:'12px 24px', background:'#fff', color:'#065F46', borderRadius:12, fontSize:'1.25rem', fontWeight:700, textDecoration:'none', transition:'background 0.2s'}}>Click</Link>
           </div>
         } />
         <Route path="/basketballmotion" element={<BasketballMotion />} />
